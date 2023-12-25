@@ -10,8 +10,7 @@ namespace linesPerWord
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите предложение: ");
-            string input = Console.ReadLine();
+            string input = "K0B3W300X150K0B3W300X400K0B3W300X650K0B3W300X850K2B1W600X2500K0B3W300X2150K0B3W300X2400K0B3W300X2650K0B3W300X2850K0B3W300X4150K0B3W300X4400K0B3W300X4650K0B3W300X4850";
             string[] words = SplitText(input);
             PrintWords(words);
         }
@@ -20,7 +19,9 @@ namespace linesPerWord
         ///</summary>
         static string[] SplitText(string text)
         {
-            string[] words = text.Split(' ');
+            string[] words = text.Split('K');
+            // Убираем пустые строки
+            words = Array.FindAll(words, s => s != "");
             return words;
         }
         /// <summary>
@@ -30,10 +31,9 @@ namespace linesPerWord
         {
             foreach (string word in words)
             {
-                Console.WriteLine(word);
+                Console.WriteLine("K" + word);
             }
             Console.ReadKey();
         }
-        
     }
 }
