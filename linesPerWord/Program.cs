@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace linesPerWord
 {
-   namespace linesPerWord
-{
     internal class Program
     {//В ключ пусть записываются координаты (то что стоит после X)  а в значении первый символ строки(та цифра которая после K)
-     // K0B3W300X|150 K0B3W300X|400 K0B3W300X|650 K0B3W300X|850 K2B1W600X|2500 K0B3W300X|2150 K0B3W300X|2400 K0B3W300X|2650 K0B3W300X|2850 K0B3W300X|4150 K0B3W300X|4400 K0B3W300X|4650 K0B3W300X|4850
+     // K0|B3W300X|150 K0|B3W300X|400 K0|B3W300X|650 K0|B3W300X|850 K2|B1W600X|2500 K0|B3W300X|2150 K0|B3W300X|2400 K0|B3W300X|2650 K0|B3W300X|2850 K0|B3W300X|4150 K0|B3W300X|4400 K0|B3W300X|4650 K0|B3W300X|4850
         static void Main(string[] args)
         {
             string input = "K0B3W300X150K0B3W300X400K0B3W300X650K0B3W300X850K2B1W600X2500K0B3W300X2150K0B3W300X2400K0B3W300X2650K0B3W300X2850K0B3W300X4150K0B3W300X4400K0B3W300X4650K0B3W300X4850";
@@ -36,7 +34,7 @@ namespace linesPerWord
             for (int i = 1; i < words.Length; i += 2)
             {
                 string coordinate = words[i].Substring(0);
-                char value = words[i - 1][1];
+                char value = words[i - 1][0];
                 coordinatesDictionary[coordinate] = value;
             }
             return coordinatesDictionary;
@@ -52,3 +50,4 @@ namespace linesPerWord
         }
     }
 }
+
